@@ -1,13 +1,12 @@
 'use strict';
 
-const Brakes = require('../brakes');
-//const Brakes = require('../../../../../brakes');
+const Brakes = require('brakes');
 const LRU = require("lru-cache");
 
 const defBrakesOptions = {
     timeout: 10 * 1000,
     circuitDuration: 15 * 1000
-}
+};
 
 class Breaker {
 
@@ -38,7 +37,7 @@ class Breaker {
                     sails.log.silly('Breaker::callCached Error on original call:', err.message ? err.message : err);
                     throw err;
                 });
-        }
+        };
     }
 
     withFallbackCaching(breaker) {
@@ -50,7 +49,7 @@ class Breaker {
                 return Promise.resolve(breaker.cache.peek(key)); // use a peek to not reset lastused
             }
             return breaker._originalFallbackFunc(...args);
-        }
+        };
     }
 
     createCache() {
@@ -104,10 +103,8 @@ class Breaker {
         if (!options.isApplicationError) {
             options.isApplicationError = function(err) {
                 sails.log.silly('Breaker::isApplicationError check for',err);
-                if (err == 404 || err == 406) {
-                    return true;
-                }
-                return false;
+                // default check for 404 (not found) and 406 (validation failed)
+                return err == 404 || err == 406;
             }
         }
         this.brakes.checkIfErrorIsApplication(options.isApplicationError);

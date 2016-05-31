@@ -1,6 +1,6 @@
 {
-  "name": "brakes",
-  "version": "2.0.0",
+  "name": "lib-circuitbreaker",
+  "version": "1.0.0",
   "description": "Node.js Circuit Breaker Pattern (forked from https://github.com/awolden/brakes.git)",
   "main": "index.js",
   "repository": {
@@ -22,7 +22,9 @@
   ],
   "license": "ISC",
   "dependencies": {
-    "lru-cache": "~4.0.1"
+    "lru-cache": "~4.0.1",
+    "brakes": "https://github.com/PeterSt66/brakes.git#2.0.1.1"
+
   },
   "devDependencies": {
     "chai": "^3.5.0",

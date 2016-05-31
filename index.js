@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = require('././Breaker');
+module.exports = require('./breaker/Breaker');
