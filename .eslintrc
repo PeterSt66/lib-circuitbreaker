@@ -5,14 +5,13 @@
     },
   "rules": {
       "comma-dangle": 0,
+      "prefer-arrow-callback": 0,
       "max-len": 0,
       "brace-style" : [2, "stroustrup", {"allowSingleLine" : true}],
-      "no-console": 0,
       "padded-blocks": 0,
       "prefer-rest-params": 0,
-      "no-use-before-define": 0,
+      "prefer-template": 0,
       "strict": 0,
-      "no-param-reassign": 0,
       "no-underscore-dangle": 0
   },
   "globals":{
