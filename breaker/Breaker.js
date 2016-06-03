@@ -165,7 +165,7 @@ class Breaker extends EventEmitter {
   checkIsApplicationError(err) {
     // default check for 404 (not found) and 406 (validation failed)
     if (err) {
-      if (err === 404 || err === 406) {
+      if (''+err === '404' || ''+err === '406') {
         return true;
       }
       if (err.statusCode && ('' + err.statusCode === '404') || ('' + err.statusCode === '406')) {
