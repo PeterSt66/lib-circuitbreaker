@@ -31,8 +31,8 @@ exec|(args to be passed to callFunc)|resolve from call or fallback|executes the 
 ```
 
 
-Option field | Description
----|---|---|---
+Optionfield | Description
+---|---
 callFunc       | A function returning a Promise in which a potentially unreliably service is called, arguments are equal to the arguments of the exec() call
 fallbackFunc   | A function returning a Promise which gives a fallback response for the given parameters, will only be called if no cache result is present
 cacheKeyFunc   | A function returning a cache-index key based on the given parameters
